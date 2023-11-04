@@ -1,0 +1,23 @@
+body{
+    background: #333;
+}
+a {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+}
+
+ul,ol,li{
+    list-style: none;
+}
+input, select, textarea{
+    border: none;
+    outline: none;
+    background: none;
+}
+button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
