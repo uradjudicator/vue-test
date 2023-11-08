@@ -1,8 +1,8 @@
 <template >
    
-        <li class="list-group-item d-flex justify-content-between favourite ">
-          <span class="list-group-item-label">John Wick 4</span>
-          <input type="number" inputmode="numeric" class="list-group-item-input" defaultValue="529">
+        <li class="list-group-item d-flex justify-content-between" :class="[{like: movie.like},{favourite: movie.favourite}]">
+          <span class="list-group-item-label">{{ movie.name }}</span>
+          <input type="number" inputmode="numeric" class="list-group-item-input" :value="movie.viewers">
 
           <div class="d-flex justify-content-center align-items-center">
 
@@ -21,7 +21,12 @@
     </template>
 <script>
 export default {
-  
+  props:{
+    movie:{
+      type:Object,
+      required: true
+    }
+  }
 }
 </script>
 <style scoped>

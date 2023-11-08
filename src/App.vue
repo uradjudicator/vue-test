@@ -1,12 +1,12 @@
 <template >
   <div class="app font-monospace">
     <div class="content">
-      <AppInfo />
+      <AppInfo :allMoviesCount="movies.length" :favouriteMoviesCount="movies.filter(c => c.favourite).length"/>
       <div class="search-panel">
         <searchPanel />
         <AppFilter />
       </div>
-      <MovieList />
+      <MovieList :movies="movies"/>
       <movieAddForm />
     </div>
   </div>
@@ -24,7 +24,32 @@ export default {
     AppFilter,
     MovieList,
     movieAddForm
- }
+ },
+ data() {
+        return {
+            movies: [
+                {
+                    name: 'John Wick 4', 
+                    viewers:'458',
+                    favourite:false,
+                    like: true
+                },
+               {
+                    name: 'Fast and Furious X', 
+                    viewers:'633',
+                    favourite:false,
+                    like: false
+                },
+                {
+                    name: 'Hobs & Shaw 2', 
+                    viewers:'571',
+                    favourite:true,
+                    like: false
+                },
+               
+            ]
+        }
+    }
 }
 </script>
 <style>
@@ -35,7 +60,7 @@ export default {
   .content{
     width: 1000px;
     min-height: 700px;
-    background-color: #fff;
+    background-color: #333;
     margin: 0 auto;
     padding: 5rem 0;
   }
